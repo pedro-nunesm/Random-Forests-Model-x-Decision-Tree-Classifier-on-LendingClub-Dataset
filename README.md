@@ -42,7 +42,10 @@ The complete list is below:
 ## 4- Insights
 
 ### **4.1 - Analyzing Data**
-
+- First of all, i used matplotlib to plot a graph and analyze how the defaulted transactions are split between trading purposes.
+- Not Fully Paid = 0 (Paid Transactions) and  Not Fully Paid = 1 (Defaulted Transactions)
+![](img/countbypurpose.png)
+- Its clear that the amount of Defaulted Transactions is much smaller than the amount of Paid Transactions, and most Paid Transactions are in purpose Debt Consolidation.
 
 ### **4.2 - Decision Tree Classifier**
 
