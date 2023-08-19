@@ -45,13 +45,45 @@ The complete list is below:
 - First of all, i used matplotlib to plot a graph and analyze how the defaulted transactions are split between trading purposes.
 - Not Fully Paid = 0 (Paid Transactions) and  Not Fully Paid = 1 (Defaulted Transactions)
 ![](img/countbypurpose.png)
-- Its clear that the amount of Defaulted Transactions is much smaller than the amount of Paid Transactions, and most Paid Transactions are in purpose Debt Consolidation.
+![](img/percentbypurpose.png)
+- Its clear that the amount of Defaulted Transactions is much smaller than the amount of Paid Transactions, and most Paid Transactions are in purpose Debt Consolidation.,
 
-### **4.2 - Decision Tree Classifier**
+- After this, i created a histrogram to analyze the  amount of data and correlation between FICO score and Credit Policy
+  ![](img/ficoxcreditpolicy.png)
 
-### **3.3 - Random Forest**
 
-### **3.4 - Checking the Coefficients**
+- Than, i did the same, but using Not Fully Paid Parameter
+
+![](img/ficoxnotfullypaid.png)
+
+- Apparently, the FICO score is not a good indicator to know if the person will be a defaulter or not, because the behavior of the data has a similar format.
+ 
+- After this, i tried to find a correlation between Int.Rate and FICO
+![](img/intratexfico.png)
+
+![](img/implottendence.png)
+
+- It is possible to check that the higher the FICO score, the lower the rates, something that makes sense, as these people represent a lower risk of default.
+- Apparently, both for defaulters and for those who paid, the behavior of the data is not different analyzing only this aspect
+
+### **4.2 - Get_Dummies**
+- **Before implementing the models, i needed to convert the "Purpose" column of the Dataframe to binary form, creating new columns using "get_dummies" function.**
+- **This was necessary as it would be difficult for the classification model to work with variables in this multi-string format.**
+
+### **4.3 Decision Tree Classifier**
+ - To begin, i separate dataset between X (Numeric Variables) and Y(Year Amount Spent)
+ - So i used Sklearn to create X_train, X_test, Y_train, Y_test
+ - The objective was to use the Trainning Dataset to train the Linear Regression Model, then, use the Test Dataset to measure the performance.
+
+Then, I implemented Decision Tree Classifier model and got the following Confusion Matrix and Classification Report:
+- 
+
+
+
+
+### **4.4 - Random Forest**
+
+### **4.5 - Checking the Coefficients**
 
 
 ## 5- Conclusion
