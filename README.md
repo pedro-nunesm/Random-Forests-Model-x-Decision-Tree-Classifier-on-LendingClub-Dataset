@@ -76,21 +76,53 @@ The complete list is below:
  - The objective was to use the Trainning Dataset to train the Linear Regression Model, then, use the Test Dataset to measure the performance.
 
 Then, I implemented Decision Tree Classifier model and got the following Confusion Matrix and Classification Report:
-- 
 
+**Confusion Matrix**
+
+![](img/cm1.png)
+
+- Only 102 people that the model actually got right had not paid, missing 341. 
+
+
+**Classification Report**
+
+![](img/cr1.png)
+- Its clear that the Precision to Not Fully Paid = 1 (defaulters) was really bad, therefore, the model was not able to predict very satisfactorily whether an operation will actually be paid or not.
+  
 
 
 
 ### **4.4 - Random Forest**
+Then, I implemented Random Forest model and got the following Confusion Matrix and Classification Report:
 
-### **4.5 - Checking the Coefficients**
+**Confusion Matrix**
+
+![](img/cm2.png)
+- Predicted that 2407 people had paid and actually had
+- But 431 people had not paid and the model predicted as paid
+
+
+
+**Classification Report**
+
+![](img/cr2.png)
+
+- This model, despite a better precision, predicted much values as Paid, and this is the reason to the higher precision (More than 80% of the dataset is made up of transactions where payment was made), but not means that the performance of the model was really better.
 
 
 ## 5- Conclusion
+Analyzing it in a purely simplistic way, the Random Forest model actually performed better, having an precision for people who did not pay of 46%.
+However, the Recall, that is, how much he got right in relation to how many he should have got right, was only 2.7%.
 
 
+There are other metrics that can be taken into account, such as the F1 Score. This metric represet a balance between Precision and Recall. 
+The Recall of Random Forest model was far worse than the recall of Decision Tree Classifier, that's why pulled F1 Score down.
+
+It is possible to conclude that, in general, none of the models performed really well for this dataset. Therefore, the choice of one of these models will depend on the metric in which it will be analyzed.
 ## 6- Next-Steps
 
 **Despite knowing that the project can still be improved a lot, I consider it finished.**
+- Maybe rebalance some model parameters to better fit the dataset.
+- Work better with the dataset, as the fact that more than 80% of it is from people who are not in default, made it difficult for the models to successfully predict possible future defaults.
 
 
